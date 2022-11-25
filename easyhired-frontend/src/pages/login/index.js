@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "../../components/forms/login";
 import Signup from "../../components/forms/signup";
-import { Button, Container, ButtonGroup } from "react-bootstrap";
 import "./style.css";
+import { Button, Container, ButtonGroup } from "react-bootstrap";
 import { useState } from "react";
 
 function LoginPage() {
