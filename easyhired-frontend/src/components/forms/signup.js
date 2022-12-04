@@ -3,6 +3,7 @@ import { Form, Container, Button } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [value, setValue] = useState();
@@ -34,9 +35,11 @@ function Signup() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Link to="/user/setRole">
+      <Button variant="dark" type="submit">
         Submit
       </Button>
+      </Link>
     </Form>
   );
 }
