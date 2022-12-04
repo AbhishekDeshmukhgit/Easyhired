@@ -12,6 +12,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { themeActions } from "../../store/theme-slice";
 import darkModeIcon from "../../assets/icons/dark-mode.png";
+import './style.css'
 
 function Navigation(props) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -53,6 +54,7 @@ function Navigation(props) {
           </Form> */}
           <div>
             <Image
+            className="DarkMode"
               onClick={handleIconClick}
               src={darkModeIcon}
               style={{ float: "right", marginRight: "10px" }}

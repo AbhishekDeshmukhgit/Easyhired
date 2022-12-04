@@ -51,7 +51,7 @@ function ApplyNowForm({onSubmit}) {
       </Form.Group>
 
     <Container className="text-center">
-      <Button variant="primary" type="submit">
+      <Button variant="dark" type="submit">
         Apply!
       </Button>
     </Container>

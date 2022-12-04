@@ -75,7 +75,7 @@ function FindJob() {
                     logo that is warmer and more contemporary.
                   </Card.Text>
                   <Link to={`/applynow`}>
-                    <Button variant="primary" >Apply Now</Button>
+                    <Button variant="dark" >Apply Now</Button>
                   </Link>
                 </Card.Body>
               </Col>

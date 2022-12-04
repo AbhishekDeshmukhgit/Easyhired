@@ -5,6 +5,7 @@ import linkedInIcon from "../../assets/icons/linkedin.png";
 import githubIcon from "../../assets/icons/github-sign.png";
 import redditIcon from "../../assets/icons/reddit.png";
 import twitterIcon from "../../assets/icons/twitter.png"
+import './style.css'
 
 function Dashboard() {
   const anchorStyles = {
