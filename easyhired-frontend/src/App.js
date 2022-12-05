@@ -11,6 +11,7 @@ import FindJob from "./pages/findJob";
 import ApplyJob from "./pages/applyJob";
 import GiveJob from "./pages/findEmployee";
 import Dashboard from "./pages/dashboard";
+import AboutUs from "./pages/aboutUs";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -28,8 +29,9 @@ function App() {
         </Route>
         <Route path="/findJob" element={<FindJob />} />
         <Route path="/givejob" element={<GiveJob /> } />
-        <Route path="/applynow" element={<ApplyJob />} />
+        <Route path="/jobform" element={<ApplyJob />} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );

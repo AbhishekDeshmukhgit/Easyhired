@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import linkedInIcon from "../../assets/icons/linkedin.png";
 import githubIcon from "../../assets/icons/github-sign.png";
 import redditIcon from "../../assets/icons/reddit.png";
-import twitterIcon from "../../assets/icons/twitter.png"
-import './style.css'
+import twitterIcon from "../../assets/icons/twitter.png";
+import profilePic from "../../assets/profile/bale-1.jpg";
+import cardImg from '../../assets/profile/office.jpeg'
+import "./style.css";
 
 function Dashboard() {
   const anchorStyles = {
-    color: "black"
-  }
+    color: "black",
+  };
   return (
     <Container>
       <div style={{ marginBottom: "40px", marginTop: "40px" }}>
@@ -18,7 +20,8 @@ function Dashboard() {
           <Col md={4}>
             <div className="text-center">
               <img
-                src="https://m.media-amazon.com/images/M/MV5BNjg3OTg4MDczMl5BMl5BanBnXkFtZTgwODc0NzUwNjE@._V1_.jpg"
+                // src="https://m.media-amazon.com/images/M/MV5BNjg3OTg4MDczMl5BMl5BanBnXkFtZTgwODc0NzUwNjE@._V1_.jpg"
+                src={profilePic}
                 width={"60%"}
                 height={"250px"}
                 style={{ borderRadius: "50%" }}
@@ -28,12 +31,14 @@ function Dashboard() {
           <Col md={8}>
             {" "}
             <br />
-            <h3>Emilia Clarke</h3>
+            <h3>Patrick Bateman</h3>
             {/* <h5>Community Name: Adobe HR department</h5><br /> */}
             <p>
-              The company was started in John Warnock's garage. The name of the
-              company, Adobe, comes from Adobe Creek in Los Altos, California,
-              which ran behind Warnock's house.
+              There is an idea of a Patrick Bateman; some kind of abstraction.
+              But there is no real me: only an entity, something illusory. And
+              though I can hide my cold gaze, and you can shake my hand and feel
+              flesh gripping yours and maybe you can even sense our lifestyles
+              are probably comparable. I simply am not there.
             </p>
             <span style={{ fontWeight: "lighter" }}>Pune, Maharashtra</span>
             <Row className="mt-2">
@@ -42,16 +47,22 @@ function Dashboard() {
                   <Image src={linkedInIcon} width={"90%"} />
                 </Col>
                 <Col md={5} className="mt-1">
-                  <a style={anchorStyles} href="www.linkedin.com/in/chirag-maski-482b08190">
-                    www.linkedin.com/in/chirag-maski-482b08190
+                  <a
+                    style={anchorStyles}
+                    href="https://9gag.com/tag/patrick-bateman"
+                  >
+                    www.linkedin.com/in/patrick-bateman
                   </a>
                 </Col>
                 <Col md={1}>
                   <Image src={redditIcon} width={"90%"} />
                 </Col>
                 <Col md={5}>
-                  <a style={anchorStyles} href="https://www.reddit.com/user/knox_populli444">
-                    https://www.reddit.com/user/knox_populli444
+                  <a
+                    style={anchorStyles}
+                    href="https://9gag.com/tag/patrick-bateman"
+                  >
+                    https://www.reddit.com/user/bateman-patrick
                   </a>
                 </Col>
               </Row>
@@ -60,16 +71,19 @@ function Dashboard() {
                   <Image src={githubIcon} width={"90%"} />
                 </Col>
                 <Col md={5} className="mt-1">
-                  <a style={anchorStyles} href="https://github.com/chiraghm4">
-                    https://github.com/chiraghm4
+                  <a style={anchorStyles} href="https://9gag.com/tag/patrick-bateman">
+                    https://github.com/bateman-codes
                   </a>
                 </Col>
                 <Col md={1}>
                   <Image src={twitterIcon} width={"90%"} />
                 </Col>
                 <Col md={5}>
-                  <a style={anchorStyles} href="https://twitter.com/haha_miracle">
-                  https://twitter.com/haha_miracle
+                  <a
+                    style={anchorStyles}
+                    href="https://9gag.com/tag/patrick-bateman"
+                  >
+                    https://twitter.com/haha_miracle
                   </a>
                 </Col>
               </Row>
@@ -86,8 +100,8 @@ function Dashboard() {
             <Col md={3} className="text-center p-4">
               <Card.Img
                 variant="top"
-                src="holder.js/100px180"
-                style={{ width: "50%" }}
+                src={cardImg}
+                style={{ width: "100%" }}
               />
             </Col>
             <Col>
@@ -121,8 +135,8 @@ function Dashboard() {
             <Col md={3} className="text-center p-4">
               <Card.Img
                 variant="top"
-                src="holder.js/100px180"
-                style={{ width: "50%" }}
+                src={cardImg}
+                style={{ width: "100%" }}
               />
             </Col>
             <Col>
@@ -156,8 +170,8 @@ function Dashboard() {
             <Col md={3} className="text-center p-4">
               <Card.Img
                 variant="top"
-                src="holder.js/100px180"
-                style={{ width: "50%" }}
+                src={cardImg}
+                style={{ width: "100%" }}
               />
             </Col>
             <Col>

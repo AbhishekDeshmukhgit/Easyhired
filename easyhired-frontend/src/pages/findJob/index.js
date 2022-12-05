@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import officeImg from '../../assets/profile/office.jpeg'
 // import JobModal from "../../components/modal";
 // import { modalActions } from "../../store/modal-slice";
 
@@ -52,8 +53,8 @@ function FindJob() {
               <Col md={3} className="text-center p-4">
                 <Card.Img
                   variant="top"
-                  src="holder.js/100px180"
-                  style={{ width: "50%" }}
+                  src={officeImg}
+                  style={{ width: "100%" }}
                 />
               </Col>
               <Col>
@@ -74,7 +75,7 @@ function FindJob() {
                     including updating its logo to a single color, an all-red
                     logo that is warmer and more contemporary.
                   </Card.Text>
-                  <Link to={`/applynow`}>
+                  <Link to={`/jobform`}>
                     <Button variant="dark" >Apply Now</Button>
                   </Link>
                 </Card.Body>

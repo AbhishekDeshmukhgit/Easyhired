@@ -37,16 +37,10 @@ function Navigation(props) {
             navbarScroll
           >
             <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-            <Nav.Link href="#action2">About Us</Nav.Link>
+            <Nav.Link href="/aboutus">About Us</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              <NavDropdown.Item href="https://github.com/AbhishekDeshmukhgit/Easyhired">GitHub</NavDropdown.Item>
+              
             </NavDropdown>
           </Nav>
           {/* <Form>
