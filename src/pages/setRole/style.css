@@ -1,0 +1,7 @@
+.card-container > * {
+    margin: 10px;
+}
+
+.myCard:hover {
+    cursor:pointer;
+}
