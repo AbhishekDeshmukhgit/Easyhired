@@ -11,6 +11,11 @@ import ApplyJob from "./pages/applyJob";
 import GiveJob from "./pages/findEmployee";
 import Dashboard from "./pages/dashboard";
 import AboutUs from "./pages/aboutUs";
+import PostSkills from "./pages/postskills";
+import Read from "./components/read/Read";
+import Hireread from "./components/hireread/Hireread";
+import HireJob from "./pages/hirejob";
+
 
 function App() {
 
@@ -26,9 +31,14 @@ function App() {
         </Route>
         <Route path="/findJob" element={<FindJob />} />
         <Route path="/givejob" element={<GiveJob /> } />
-        <Route path="/jobform" element={<ApplyJob />} />
+        <Route path="/post" element={<PostSkills/> } />
+        <Route path="/jobform/:id" element={<ApplyJob />} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path='/findJob/:id' element={<Read/> }/>
+        <Route path='/findJob/post/:id' element={<Hireread/> }/>
+        <Route path="/hireme/:id" element={<HireJob/>} />
+
       </Routes>
     </BrowserRouter>
   );

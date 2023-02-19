@@ -31,7 +31,7 @@ function Login() {
       console.log(err)
     }
     
-    loggedIn?navigate('/user/setRole'):<div>Incorrect Password</div>
+    loggedIn?navigate('/findJob'):<div>Incorrect Password</div>
     
     console.log(username,password)
   };

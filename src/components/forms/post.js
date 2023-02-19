@@ -7,24 +7,21 @@ import { projectFirestore } from "../../firebase/config";
 import { collection, addDoc } from "firebase/firestore/lite";
 import "./Post.css";
 
-function JobForm() {
+function Post() {
 
-  
- const [company, setCompanyName] = useState('');
-  const [profile, setProfile] = useState('');
-  const [salary, setSalary] = useState('');
+  const [name, setName] = useState('');
+  const [role, setRole] = useState('');
   const [desc, setDescription] = useState('');
-    const [location, setLocation] = useState('');
-  const [email,setEmail]=useState('')
-
+  const [email, setEmail] = useState('');
+  const [location, setLocation] = useState('');
 
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const doc = { company, profile, desc, salary, location,email };
+    const doc = { name, role, desc, email, location };
     try {
-      await addDoc(collection(projectFirestore, "jobs"), doc);
+      await addDoc(collection(projectFirestore, "post"), doc);
       navigate('/findJob');
     } catch (err) {
       console.log(err);
@@ -36,28 +33,23 @@ function JobForm() {
     <Container className="post-container">
       <Form onSubmit={handleSubmit} className="post-form">
         <Form.Group className="mb-3" controlId="formGridName">
-          <Form.Label>Company Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter company name" value={company} onChange={(e) => setCompanyName(e.target.value)} />
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formGridRole">
-          <Form.Label>Profile</Form.Label>
-          <Form.Control type="text" placeholder="Enter profile" value={profile} onChange={(e) => setProfile(e.target.value)} />
+          <Form.Label>Job Role Interested In</Form.Label>
+          <Form.Control type="text" placeholder="Enter job role" value={role} onChange={(e) => setRole(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formGridLocation">
-          <Form.Label>Location</Form.Label>
-          <Form.Control type="text" placeholder="Enter job location" value={location} onChange={(e) => setLocation(e.target.value)} />
+          <Form.Label>Preferred Location</Form.Label>
+          <Form.Control type="text" placeholder="Enter preferred location" value={location} onChange={(e) => setLocation(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formGridDesc">
-          <Form.Label>Description</Form.Label>
+          <Form.Label>About Yourself</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Enter description" value={desc} onChange={(e) => setDescription(e.target.value)} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formGridEmail">
-          <Form.Label>Salary</Form.Label>
-          <Form.Control type="text" placeholder="Enter salary" value={salary} onChange={(e) => setSalary(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formGridEmail">
@@ -75,5 +67,5 @@ function JobForm() {
   );
 }
 
-export default JobForm;
+export default Post;
 

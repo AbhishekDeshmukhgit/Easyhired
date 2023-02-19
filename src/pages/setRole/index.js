@@ -12,7 +12,7 @@ function SetRole() {
       You can change your role afterwards* <br />
       <br />
       <Container className="d-flex justify-content-center card-container">
-        <Link to="/findJob" style={{ textDecoration: 'none' }}>
+        <Link to="/post" style={{ textDecoration: 'none' }}>
           <Card
             bg="dark"
             key="dark"

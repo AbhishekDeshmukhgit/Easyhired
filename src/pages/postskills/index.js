@@ -1,15 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import JobForm from "../../components/forms/jobform";
+import Post from "../../components/forms/post";
 
-function GiveJob() {
+function PostSkills() {
     return(
         <div className="p-5">
+            <h2 className="text-center">!! Post your skills !!</h2>
             <Container className="p-5">
-                <JobForm />
+                <Post />
             </Container>
         </div>
     )
 }
 
-export default GiveJob;
+export default PostSkills;
