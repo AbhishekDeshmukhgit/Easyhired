@@ -8,8 +8,12 @@ import twitterIcon from "../../assets/icons/twitter.png";
 import profilePic from "../../assets/profile/bale-1.jpg";
 import cardImg from '../../assets/profile/office.jpeg'
 import "./style.css";
+import { useState } from "react";
+import { useEffect } from "react";
+
 
 function Dashboard() {
+  
   const anchorStyles = {
     color: "black",
   };

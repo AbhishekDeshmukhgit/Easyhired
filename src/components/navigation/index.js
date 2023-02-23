@@ -1,4 +1,5 @@
 import React from "react";
+import { getAuth, signOut } from "firebase/auth";
 import {
   Button,
   Container,
@@ -11,11 +12,18 @@ import {
 import { LinkContainer } from "react-router-bootstrap";
 import darkModeIcon from "../../assets/icons/dark-mode.png";
 import './style.css'
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 function Navigation(props) {
   // console.log(siteTheme, "siteTheme");
+  const navigate=useNavigate()
+  const location =useLocation()
+  const isLoginPage = location.pathname === "/";
 
   return (
+    !isLoginPage &&(
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid style={{ fontSize: "20px" }}>
         <LinkContainer to="/" style={{ fontSize: "25px" }}>
@@ -35,28 +43,34 @@ function Navigation(props) {
               
             </NavDropdown>
           </Nav>
+
           {/* <Form>
             <Form.Check type="switch" variant="dark" />
           </Form> */}
           <div>
-            <Image
+            {/* <Image
             className="DarkMode"
               src={darkModeIcon}
               style={{ float: "right", marginRight: "10px" }}
               width={"7%"}
-            />
+            /> */}
+            <Button variant="dark" style={{ fontSize: "14px" }} size="sm" className="DarkMode"
+            onClick={()=>{
+              const auth = getAuth();
+            signOut(auth).then(() => {
+            // 
+            console.log("Sign-out successful.")
+            navigate("/")
+            }).catch((error) => {
+            console.log("An error happened.")
+          });
+            }}
+            >Logout</Button>
           </div>
-          {/* {isLoggedIn ? (
-            <Navbar.Text>
-              Signed in as: <a href="#login">{props.username}</a>
-            </Navbar.Text>
-          ) : (
-            ""
-          )} */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  ))
 }
 
 export default Navigation;

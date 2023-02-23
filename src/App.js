@@ -15,6 +15,7 @@ import PostSkills from "./pages/postskills";
 import Read from "./components/read/Read";
 import Hireread from "./components/hireread/Hireread";
 import HireJob from "./pages/hirejob";
+import Dashboardform from "./components/forms/Dashboardform";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/findJob/:id' element={<Read/> }/>
         <Route path='/findJob/post/:id' element={<Hireread/> }/>
         <Route path="/hireme/:id" element={<HireJob/>} />
+        <Route path="/dashboardform" element={<Dashboardform/>} />
 
       </Routes>
     </BrowserRouter>

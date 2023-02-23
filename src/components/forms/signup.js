@@ -6,12 +6,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {  createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../../firebase/config'
+import { useNavigate } from "react-router-dom";
 
 
 function Signup() {
   const [value, setValue] = useState();
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
+  const navigate=useNavigate()
 
   function handleSubmit(e)
   {
@@ -19,6 +21,7 @@ function Signup() {
     createUserWithEmailAndPassword(auth,email,password)
     .then((cred)=>{
       console.log('user created ',cred.user)
+      navigate("/dashboardform")
     })
     console.log("Submitted")
   }
