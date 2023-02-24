@@ -78,6 +78,15 @@ function FindJob() {
 
   return (
     <Container className="mt-4">
+      <div className="d-flex justify-content-end mb-4">
+        <input
+          type="text"
+          placeholder="Search"
+          // value={searchQuery}
+          // onChange={handleSearch}
+          style={{ marginRight: "10px" }}
+        />
+      </div>
       <h2 className="text-center">Job Openings</h2><br />
       <Link to={`/user/setRole`}>
       <div className="d-flex align-items-center mb-4 text-center">

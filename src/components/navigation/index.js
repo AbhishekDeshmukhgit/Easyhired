@@ -26,7 +26,7 @@ function Navigation(props) {
     !isLoginPage &&(
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid style={{ fontSize: "20px" }}>
-        <LinkContainer to="/" style={{ fontSize: "25px" }}>
+        <LinkContainer to="/findJob" style={{ fontSize: "25px" }}>
           <Navbar.Brand href="#">EasyHired</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="navbarScroll" />

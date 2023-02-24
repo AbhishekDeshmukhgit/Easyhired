@@ -10,6 +10,7 @@ import cardImg from '../../assets/profile/office.jpeg'
 import "./style.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import {auth} from '../../firebase/config'
 
 
 function Dashboard() {
@@ -17,6 +18,15 @@ function Dashboard() {
   const anchorStyles = {
     color: "black",
   };
+  const user = auth.currentUser;
+console.log(user)
+// if (user) {
+//   // User is signed in
+//   console.log("signed in zala bhava")
+// } else {
+//   // No user is signed in
+//   console.log("naaaa")
+// }
   return (
     <Container>
       <div style={{ marginBottom: "40px", marginTop: "40px" }}>
