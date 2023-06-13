@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams, Navigate } from "react-router-dom";
 import { useState } from "react";
 
 import LoginPage from "./pages/login";
@@ -16,33 +16,41 @@ import Read from "./components/read/Read";
 import Hireread from "./components/hireread/Hireread";
 import HireJob from "./pages/hirejob";
 import Dashboardform from "./components/forms/Dashboardform";
+import { useAuthContext } from "./hooks/useAuthContext";
+
+
 
 
 function App() {
 
+  const {authIsReady,user}=useAuthContext()
   return (
+    <div className="App">
+    {authIsReady && (
     <BrowserRouter>
-    <Navigation username="chirag" />
+    <Navigation username="abhi" />
       {/* {isLoggedIn ? <UserNavbar username="chirag" /> : <Navigation />} */}
       <Routes>
-        <Route path="/" element={<LoginPage/>} />
-        <Route path="/user/setRole" element={<SetRole/>} />
+        <Route path="/" element={!user?<LoginPage/>:<Navigate replace to={"/findJob"}/>} />
+        <Route path="/user/setRole" element={user?<SetRole/>:<Navigate replace to={"/"}/>} />
         <Route path="/user">
-          <Route path=":userId" element={<UserDetails />} />
+          <Route path=":userId" element={user?<UserDetails />:<Navigate replace to={"/"}/>} />
         </Route>
-        <Route path="/findJob" element={<FindJob />} />
-        <Route path="/givejob" element={<GiveJob /> } />
-        <Route path="/post" element={<PostSkills/> } />
-        <Route path="/jobform/:id" element={<ApplyJob />} />
-        <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path='/findJob/:id' element={<Read/> }/>
-        <Route path='/findJob/post/:id' element={<Hireread/> }/>
-        <Route path="/hireme/:id" element={<HireJob/>} />
-        <Route path="/dashboardform" element={<Dashboardform/>} />
+        <Route path="/findJob" element={user?<FindJob />:<Navigate replace to={"/"}/>} />
+        <Route path="/givejob" element={user?<GiveJob />:<Navigate replace to={"/"}/> } />
+        <Route path="/post" element={user?<PostSkills/>:<Navigate replace to={"/"}/> } />
+        <Route path="/jobform/:id" element={user?<ApplyJob />:<Navigate replace to={"/"}/>} />
+        <Route path="/dashboard" element={user?<Dashboard/>:<Navigate replace to={"/"}/>} />
+        <Route path="/aboutus" element={user?<AboutUs />:<Navigate replace to={"/"}/>} />
+        <Route path='/findJob/:id' element={user?<Read/> :<Navigate replace to={"/"}/>}/>
+        <Route path='/findJob/post/:id' element={user?<Hireread/> :<Navigate replace to={"/"}/>}/>
+        <Route path="/hireme/:id" element={user?<HireJob/>:<Navigate replace to={"/"}/>} />
+        <Route path="/dashboardform" element={user?<Dashboardform/>:<Navigate replace to={"/"}/>} />
 
       </Routes>
     </BrowserRouter>
+    )}
+    </div>
   );
 }
 
